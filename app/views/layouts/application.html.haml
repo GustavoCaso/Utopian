@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %title UtopiaWorld
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %header.text_center
+      %h1 The Utopian World
+      %nav.clearfix
+        %ul
+          %li Utopia
+          %li People say
+          %li Water up
+          %li Act Together
+    = yield

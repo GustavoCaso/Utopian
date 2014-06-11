@@ -1,0 +1,73 @@
+// Variables
+$num-col: 12
+$gutter: 20px
+
+// Help clasess
+.text_center
+  text-align: center !important
+.margin_center
+  margin: 0 auto
+.float_right
+  float: right !important
+.float_left
+  float: left !important
+.clearfix
+  content: ""
+  display: table
+  clear: both
+
+// Universal Rules
+*
+  -moz-box-sizing:    border-box
+  -webkit-box-sizing: border-box
+  box-sizing:        border-box
+
+img
+  max-width: 100%
+  display: block
+
+
+// Grid
+html
+  font-size: 62.5%
+
+  .page_wrap
+    width: 80%
+    margin: 0 auto
+  .grid
+    margin-bottom: $gutter
+    &.no_margin
+      margin: 0
+    &:after
+      content: ""
+      display: table
+      clear: both
+    .col
+      float: left
+      padding-right: $gutter
+      height: 100%
+
+    .col-1
+      width: ((100%/$num-col) * 1)
+    .col-2
+      width: ((100%/$num-col) * 2)
+    .col-3
+      width: ((100%/$num-col) * 3)
+    .col-4
+      width: ((100%/$num-col) * 4)
+    .col-5
+      width: ((100%/$num-col) * 5)
+    .col-6
+      width: (100% / 2)
+    .col-7
+      width: ((100%/$num-col) * 7)
+    .col-8
+      width: ((100%/$num-col) * 8)
+    .col-9
+      width: ((100%/$num-col) * 9)
+    .col-10
+      width: ((100%/$num-col) * 10)
+    .col-11
+      width: ((100%/$num-col) * 11)
+    .col-12
+      width: 100%
