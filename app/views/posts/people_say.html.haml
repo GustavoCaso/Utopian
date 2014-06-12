@@ -1,0 +1,16 @@
+.page_wrap
+  - @posts.each do |post|
+    - cover = post.pictures.first.photo.url
+    .people_say
+      .grid
+        .col.col-12
+          %h2.meta.text_center== #{friendly_date(post.date)} / #{post.location}
+      .grid
+        .col.col-12
+          = image_tag(cover, class: "margin_center")
+      .grid
+        .meta_people_index.clearfix
+          .col.col-12.text_center
+            %h1= post.title
+            %p= post.short_description
+            = link_to "Read more", post_path(post), class: "read_more"

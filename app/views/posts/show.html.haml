@@ -1,0 +1,17 @@
+.page_wrap
+  .grid
+    .col.col-12
+      %h2.meta.text_center== #{friendly_date(@post.date)} / #{@post.location}
+  .grid
+    .col.col-12
+      = image_tag(@post.pictures.first.photo.url, class: "margin_center")
+  .grid
+    .col.col-12.text_center
+      .text_utopia
+        %h1= @post.title
+        %p= @post.description
+
+  .grid
+    - @post.pictures.drop(1).each do |picture|
+      .col.col-12
+        = image_tag(picture.photo.url, class: "margin_center smaller_width")

@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
-  get 'utopia', to: 'static#utopia', as: 'utopia'
-  get 'utopia_show', to: 'static#show', as: 'utopia_show'
+  get 'utopia', to: 'posts#utopia', as: 'utopia'
+  get 'people_say', to: 'posts#people_say', as: 'people_say'
+  resources :posts
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

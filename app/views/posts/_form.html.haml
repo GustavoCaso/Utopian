@@ -1,0 +1,50 @@
+.info_form.notify.text_center.margin_center
+  .grid
+    .col.col-8
+      %p La primera foto es la portada del Post tiene queser mayor ...x...
+
+#form
+  = form_for @post do |f|
+    - if @post.errors.any?
+      %h1 There were some errors
+      %ul
+        - @post.errors.full_messages.each do |msg|
+          %li= msg
+    .grid
+      .col.col-2
+        = f.label :date
+      .col.col-5
+        = f.date_field :date
+    .grid
+      .col.col-2
+        = f.label :title
+      .col.col-5
+        = f.text_field :title      
+    .grid
+      .col.col-2
+        = f.label :location
+      .col.col-5
+        = f.text_field :location
+    .grid
+      .col.col-2
+        = f.label :short_description
+      .col.col-5
+        = f.text_field :short_description
+    .grid
+      .col.col-2
+        = f.label :description
+      .col.col-5
+        = f.text_area :description
+    .grid
+      .col.col-2
+        = f.label :category
+      .col.col-5
+        = f.select :category, Post::CATEGORIES
+    = f.fields_for :pictures do |ff|
+      .grid
+        .col.col-2
+          = ff.label :photo
+        .col.col-5
+          = ff.file_field :photo
+    .grid
+      = f.submit "Create"

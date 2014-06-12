@@ -1,3 +1,6 @@
+//Imports
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,900,100)
+
 // Variables
 $num-col: 12
 $gutter: 20px
@@ -11,25 +14,44 @@ $gutter: 20px
   float: right !important
 .float_left
   float: left !important
-.clearfix
+.clearfix:after
   content: ""
   display: table
   clear: both
+.notify
+  background: rgba(217,237,247,1)
+  border: 1px solid rgba(188,232,241,1)
+.read_more
+  border: 1px solid rgba(133,135,139,1)
+  color: rgba(43,43,43,1)
+  display: inline-block
+  margin-top: 30px
+  padding: 10px 12px
+  text-transform: uppercase
+  text-decoration: none
+  -webkit-box-shadow: inset 0px 0px 1px 1px rgba(50, 50, 50, 0.3)
+  -moz-box-shadow:    inset 0px 0px 1px 1px rgba(50, 50, 50, 0.3)
+  box-shadow:         inset 0px 0px 1px 1px rgba(50, 50, 50, 0.3)
+
 
 // Universal Rules
 *
   -moz-box-sizing:    border-box
   -webkit-box-sizing: border-box
   box-sizing:        border-box
-
+input, textarea
+  outline: none
 img
   max-width: 100%
   display: block
+ul
+  padding: 0 !important  
 
 
 // Grid
 html
   font-size: 62.5%
+  font-family: 'Roboto', sans-serif
 
   .page_wrap
     width: 80%

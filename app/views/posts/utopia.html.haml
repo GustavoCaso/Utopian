@@ -1,0 +1,26 @@
+.page_wrap
+  - @posts.each_with_index do |post, index|
+    - index +=1
+    - cover = post.pictures.first.photo.url
+    - if index.odd?
+      .grid.no_margin
+        .col.col-8
+          = image_tag(cover)
+        .col.col-4
+          .meta_utopia_index
+            .data.text_center
+              %p= friendly_date(post.date)
+              %h1= post.title
+              %p= post.short_description
+              = link_to "Read More", post_path(post), class: "read_more"
+    - else
+      .grid.no_margin
+        .col.col-4
+          .meta_utopia_index
+            .data.text_center
+              %p= friendly_date(post.date)
+              %h1= post.title
+              %p= post.short_description
+              = link_to "Read More", post_path(post), class: "read_more"
+        .col.col-8
+          = image_tag(cover)
