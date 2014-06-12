@@ -19,7 +19,7 @@
       .col.col-2
         = f.label :title
       .col.col-5
-        = f.text_field :title      
+        = f.text_field :title
     .grid
       .col.col-2
         = f.label :location
@@ -41,10 +41,16 @@
       .col.col-5
         = f.select :category, Post::CATEGORIES
     = f.fields_for :pictures do |ff|
-      .grid
-        .col.col-2
-          = ff.label :photo
-        .col.col-5
-          = ff.file_field :photo
+      - unless ff.object.new_record?
+        .image_show_form
+          = image_tag(ff.object.photo.url(:thumb))
+          = ff.hidden_field :_destroy
+          = link_to "Delete", "#", class: "delete_picture"
+      -else
+        .grid{style: "clear: both;"}
+          .col.col-2
+            = ff.label :photo
+          .col.col-5
+            = ff.file_field :photo
     .grid
       = f.submit "Create"

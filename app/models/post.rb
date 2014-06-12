@@ -5,4 +5,5 @@ class Post < ActiveRecord::Base
   accepts_nested_attributes_for :pictures, allow_destroy: true, reject_if: proc {|attributes| attributes['photo'].blank?}
 
   CATEGORIES = ["People Say", "Utopia"]
+  MAX_PHOTOS = 4
 end

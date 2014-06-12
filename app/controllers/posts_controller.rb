@@ -7,10 +7,12 @@ class PostsController < ApplicationController
 
   def utopia
     @posts = Post.where(category: "Utopia")
+    @active = "Utopia"
   end
 
   def people_say
     @posts = Post.where(category: "People Say")
+    @active = "People Say"
   end
 
   def show
@@ -31,7 +33,8 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post.pictures.build
+    photos_number = Post::MAX_PHOTOS - @post.pictures.count
+    photos_number.times{@post.pictures.build}
   end
 
   def update
