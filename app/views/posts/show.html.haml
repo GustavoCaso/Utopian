@@ -11,7 +11,9 @@
         %h1= @post.title
         %p= @post.description
 
-  .grid
-    - @post.pictures.drop(1).each do |picture|
-      .col.col-12
-        = image_tag(picture.photo.url, class: "margin_center smaller_width")
+
+  - @post.pictures.drop(1).in_groups_of(2, false) do |pictures|
+    .grid
+      .col.col-12.table_cell
+        - pictures.each do |picture|
+          = image_tag(picture.photo.url, class: "smaller_width inline_block")

@@ -12,9 +12,9 @@
         %nav.menu
           %ul.clearfix.margin_center
             %li
-              = link_to "Utopia", utopia_path, class: @active == "Utopia" ? "active" : ""
+              = link_to "Utopia", utopia_path, class: @active == "Utopia"  ? "active" : ""
             %li
-              = link_to "People say", people_say_path, class: @active == "People Say" ? "active" : ""
+              = link_to "People say", people_say_path, class: @active == "People Say"  ? "active" : ""
             %li Water up
             %li Act Together
     = yield

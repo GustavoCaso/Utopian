@@ -16,11 +16,12 @@ class PostsController < ApplicationController
   end
 
   def show
+    binding.pry
   end
 
   def new
     @post = Post.new
-    4.times{@post.pictures.build}
+    Post::MAX_PHOTOS.times{@post.pictures.build}
   end
 
   def create

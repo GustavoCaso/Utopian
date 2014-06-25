@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'utopia', to: 'posts#utopia', as: 'utopia'
   get 'people_say', to: 'posts#people_say', as: 'people_say'
   resources :posts
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
