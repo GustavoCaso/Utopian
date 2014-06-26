@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :require_login, except: [:utopia, :people_say, :show]
   before_action :set_post, except: [:index,:utopia,:people_say,:new,:create]
 
   def index
@@ -16,7 +17,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    
+
   end
 
   def new

@@ -1,0 +1,28 @@
+.page_wrap
+  .grid
+    .col.col-12
+      %table.index_table
+        %tr
+          %th
+            Title
+          %th
+            Category
+          %th
+            Location
+          %th
+            Date
+          %th
+            Short Description
+          %th
+          %th
+          %th
+        - @posts.each do |post|
+          %tr
+            %td= post.title
+            %td= post.category
+            %td= post.location
+            %td= post.date
+            %td= post.short_description
+            %td= link_to "Show", post_path(post)
+            %td= link_to "Edit", edit_post_path(post)
+            %td= link_to "Delete", post_path(post), method: :delete, data: {confirm: "Are you sure ?"}

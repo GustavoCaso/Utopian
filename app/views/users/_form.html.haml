@@ -1,0 +1,24 @@
+#form{style: "width: 900px;"}
+  = form_for @user do |f|
+    - if @user.errors.any?
+      %h1 There were some errors
+      %ul
+        - @user.errors.full_messages.each do |msg|
+          %li= msg
+    .grid
+      .col.col-2
+        = f.label :email
+      .col.col-5
+        = f.text_field :email
+    .grid
+      .col.col-2
+        = f.label :password
+      .col.col-5
+        = f.password_field :password
+    .grid
+      .col.col-2
+        = f.label :password_confirmation
+      .col.col-5
+        = f.password_field :password_confirmation
+    .grid
+      = f.submit "Create", class: "read_more"

@@ -1,9 +1,7 @@
-.info_form.notify.text_center.margin_center
-  .grid
-    .col.col-8
-      %p La primera foto es la portada del Post tiene queser mayor ...x...
+.notify.text_center
+  %p La primera foto es la portada del Post tiene que ser mayor, el resto de fotos son de tamaño 1x1 y apareceran de dos en dos
 
-#form
+#form{style: "width: 900px"}
   = form_for @post do |f|
     - if @post.errors.any?
       %h1 There were some errors
@@ -45,7 +43,7 @@
         .image_show_form
           = image_tag(ff.object.photo.url(:thumb))
           = ff.hidden_field :_destroy
-          = link_to "Delete", "#", class: "delete_picture"
+          = link_to "Delete", "#", id: "delete_picture"
       -else
         .grid{style: "clear: both;"}
           .col.col-2
@@ -53,4 +51,4 @@
           .col.col-5
             = ff.file_field :photo
     .grid
-      = f.submit "Create"
+      = f.submit "Create", class: "read_more"

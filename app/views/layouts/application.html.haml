@@ -3,12 +3,18 @@
   %head
     %title UtopiaWorld
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
     - unless @no_menu
+      - if login?
+        %nav.menu_small
+          %ul.clearfix.margin_center.text_center
+            %li= link_to "Posts", posts_path
+            %li= link_to "Users", users_path
+            %li= link_to "Log Out", logout_path, method: :delete, data:{confirm: "Are you sure you want Log out"}
       %header.text_center
-        %h1 The Utopian World
+        %h1= link_to "The Utopian World", root_path
         %nav.menu
           %ul.clearfix.margin_center
             %li
@@ -17,4 +23,9 @@
               = link_to "People say", people_say_path, class: @active == "People Say"  ? "active" : ""
             %li Water up
             %li Act Together
+
+    - flash.each do |key, msg|
+      %div{ :id => key, class:"text_center" }= msg
+
+
     = yield

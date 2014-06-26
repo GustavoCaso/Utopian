@@ -5,10 +5,17 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'static#home'
 
+
+  resources :posts
   get 'utopia', to: 'posts#utopia', as: 'utopia'
   get 'people_say', to: 'posts#people_say', as: 'people_say'
-  resources :posts
-  
+
+  resources :users, except:[:show]
+
+  get 'signin', to: 'sessions#new', as: 'signin'
+  post 'signup', to: 'sessions#create', as: 'signup'
+  delete 'logout', to: 'sessions#destroy', as: 'logout'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -6,6 +6,7 @@ $num-col: 12
 $gutter: 20px
 
 // Help clasess
+  // Table display for centering elements
 .table_display
   display: table
   width: 100%
@@ -13,12 +14,7 @@ $gutter: 20px
   display: table-cell
   text-align: center
   vertical-align: middle
-.inline_block
-  display: inline-block    
-.text_center
-  text-align: center !important
-.margin_center
-  margin: 0 auto
+  // Floats
 .float_right
   float: right !important
 .float_left
@@ -27,9 +23,28 @@ $gutter: 20px
   content: ""
   display: table
   clear: both
-.notify
+  // Centering
+.text_center
+  text-align: center !important
+.margin_center
+  margin: 0 auto
+  // display
+.inline_block
+  display: inline-block
+
+
+#notice,#error,.notify
+  padding: 20px
+  font-size: 1.5rem
+#notice,.notify
   background: rgba(217,237,247,1)
   border: 1px solid rgba(188,232,241,1)
+#error
+  background: rgba(242,222,222,1)
+  border: 1px solid rgba(235,204,209,1)
+
+
+  // Buttons
 .read_more
   border: 1px solid rgba(133,135,139,1)
   color: rgba(43,43,43,1)
@@ -40,6 +55,26 @@ $gutter: 20px
   -webkit-box-shadow: inset 0px 0px 1px 1px rgba(50, 50, 50, 0.3)
   -moz-box-shadow:    inset 0px 0px 1px 1px rgba(50, 50, 50, 0.3)
   box-shadow:         inset 0px 0px 1px 1px rgba(50, 50, 50, 0.3)
+  &:hover
+    color: white
+
+
+// Tables
+.index_table
+  width: 100%
+  tr
+    font-size: 1.5rem
+    border-bottom: 1px solid grey
+    &:hover
+      background: rgba(187,187,187,.3)
+  th, td
+    text-align: center
+    padding: 20px
+
+    a
+      color: rgba(187,187,187,1)
+      &:hover
+        color: rgba(136,134,126,1)
 
 
 // Universal Rules

@@ -1,0 +1,16 @@
+.page_wrap
+  %h1.text_center Sign In Parrillas !!!!!!!
+  #form{style: "width: 700px;"}
+    = form_tag signup_path do
+      .grid
+        .col.col-2
+          = label_tag :email
+        .col.col-5
+          = text_field_tag :email
+      .grid
+        .col.col-2
+          = label_tag :password
+        .col.col-5
+          = password_field_tag :password
+      .grid
+        = submit_tag "Log in", class: "read_more"
