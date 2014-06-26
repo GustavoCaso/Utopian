@@ -9,7 +9,7 @@
     .col.col-12.text_center
       .text_utopia
         %h1= @post.title
-        %p= @post.description
+        = raw RedCloth.new(@post.description).to_html
 
 
   - @post.pictures.drop(1).in_groups_of(2, false) do |pictures|

@@ -16,6 +16,7 @@ gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'pry'
 gem 'rails_12factor', group: :production
 gem 'pg'
+gem 'RedCloth'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
