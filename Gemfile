@@ -12,7 +12,13 @@ gem 'haml-rails'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
+
+# Use of upload images
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'aws-sdk'
+
+# load env variables
+gem 'dotenv-rails', :groups => [:development, :test]
 gem 'pry'
 gem 'rails_12factor', group: :production
 gem 'pg'

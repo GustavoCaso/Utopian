@@ -19,6 +19,17 @@ Rails.application.configure do
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
+  # Paperclip deafult Amazon S3 configuration
+
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['S3_BUCKET_NAME'],
+      :access_key_id => ENV['S3_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['S3_SECRET_ACCESS_KEY']
+    }
+  }
+
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
 

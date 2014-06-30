@@ -4,7 +4,7 @@
       %h2.meta.text_center== #{friendly_date(@post.date)} / #{@post.location}
   .grid
     .col.col-12
-      = image_tag(@post.pictures.first.photo.url, class: "margin_center")
+      = image_tag(@post.pictures.first.photo.url, class: "margin_center") unless @post.pictures.empty?
   .grid
     .col.col-12.text_center
       .text_utopia
@@ -16,4 +16,4 @@
     .grid
       .col.col-12.table_cell
         - pictures.each do |picture|
-          = image_tag(picture.photo.url, class: "smaller_width inline_block")
+          = image_tag(picture.photo.url, class: "smaller_width inline_block") unless @post.pictures.empty?
