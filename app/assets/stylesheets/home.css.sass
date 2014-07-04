@@ -1,5 +1,5 @@
 .home_background
-  background: image-url("home_background.jpg") no-repeat center center fixed
+  background: image-url("home-background-2.jpg") no-repeat center center fixed
   -webkit-background-size: cover
   -moz-background-size: cover
   -o-background-size: cover
@@ -16,4 +16,25 @@
       &:hover
         border-bottom: 1px solid white
   .footer
-    position: absolute      
+    position: absolute
+
+    .social_menu
+      ul
+        list-style: none
+        li
+          float: left
+          display: block
+          width: 64px
+          height: 64px
+          background: image-url("social-sprite.png") 0 0
+          &.facebook
+            background-position: -64px 0px
+            &:hover
+              background-position: -64px 64px
+          &.mail
+            background-position: -128px 0px
+            &:hover
+              background-position: -128px 64px
+          &.instagram
+            &:hover
+              background-position: 0px 64px
